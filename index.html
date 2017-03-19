@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+   <head>
+      <title>Currency Converter</title>
+   </head>
+   <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+   <script type="text/javascript" src="js/controllers.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <body>
+   <h1>Currency Converter</h1>
+      <div class="main" ng-controller='ConvertCtrl'>
+         <ul class="artistlist">
+            <li class="artist cf">
+               <label class="field1">From</label>
+               <label class="field1">TO</label>
+               <br>
+               <select ng-model="fromType" data-ng-change="forExConvert()">
+                  <option value="USD">USD</option>
+                  <option value="INR">INR</option>
+                  <option value="EUR">EUR</option>
+               </select>
+               <select ng-model="toType" data-ng-change="forExConvert()">
+                  <option value="USD">USD</option>
+                  <option value="INR">INR</option>
+                  <option value="EUR">EUR</option>
+               </select>
+            </li>
+      		<li class="artist cf">
+      			<label class="field">From Value</label>
+               <label class="field">To Value</label>
+               <br>
+               <input ng-model="fromValue" placeholder="0" data-ng-change="forExConvert()" autofocus>
+               <input ng-model="toValue" placeholder="0" data-ng-change="forExConvert()">
+      		</li>
+      	</ul>
+      </div>
+   </body>
+</html>
