@@ -1,0 +1,5 @@
+1. Text box should not allow alphabets. special symbols and negative numbers.
+3. Allow input with max. 2 decimal places for text box.
+4. Give 0.00 as default value for textbox.
+5. Disclaimer should be either a popup window or text appended below on the same page.
+6. Make the UI responsive on resizing the window, use bootstrap for this.
