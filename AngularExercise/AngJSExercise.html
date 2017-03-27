@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ConverterApp">
+   <head>
+      <title>Currency Converter</title>
+   </head>
+   <script src="library/angular/angular.min.js"></script>
+   <script src="js/AngJScontroller.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/AngJSstyle.css">
+   <body>
+   <h1>Currency Converter</h1>
+      <div class="main" ng-controller='ConverterCntlr'>
+	    <div class="Style">
+               <label class="field">Type in amount and Select Currency:</label><br>
+			   <input ng-model="fromCurVal" placeholder="Enter the value" data-ng-change="toConvert()" autofocus>
+               <select ng-model="fromCurType" data-ng-change="toConvert()">
+                  <option value=CAD>CAD</option>
+                  <option value=USD>USD</option>
+                  <option value=EUR>EUR</option>
+               </select>
+               <br>
+			   <label class="field">Converted Amount</label><br>
+			   <input ng-model="toCurVal" data-ng-change="toConvert()">
+               <select ng-model="toCurType" data-ng-change="toConvert()">
+                  <option value=CAD>CAD</option>
+                  <option value=USD>USD</option>
+                  <option value=EUR>EUR</option>
+               </select>
+			   <br>
+			   <a class="link" href="http://www.xe.com/currencyconverter/">Disclaimer</a>
+			<br>
+      	</div>
+      </div>
+   </body>
+</html>
