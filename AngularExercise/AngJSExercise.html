@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ConverterApp">
+<html lang="en" ng-app="ConverterApp" ng-init="fromCurVal='0.00'">
    <head>
       <title>Currency Converter</title>
    </head>
    <script src="library/angular/angular.min.js"></script>
    <script src="js/AngJScontroller.js"></script>
    <link rel="stylesheet" type="text/css" href="css/AngJSstyle.css">
-   <body>
+   <body  ng-controller='ConverterCntlr'>
    <h1>Currency Converter</h1>
-      <div class="main" ng-controller='ConverterCntlr'>
+      <div class="main"  my-Directive>
 	    <div class="Style">
                <label class="field">Type in amount and Select Currency:</label><br>
-			   <input ng-model="fromCurVal" placeholder="Enter the value" data-ng-change="toConvert()" autofocus>
+			   <input ng-model="fromCurVal" placeholder="Enter the value" valid-Number data-ng-change="toConvert()" autofocus>
                <select ng-model="fromCurType" data-ng-change="toConvert()">
                   <option value=CAD>CAD</option>
                   <option value=USD>USD</option>
