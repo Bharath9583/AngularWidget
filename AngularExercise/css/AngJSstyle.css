@@ -1,49 +1,67 @@
-.Style {
+.converterclass{
+	width: 23%;
+	border: 2px solid;
+	margin-left: 36%;
+	margin-top: 5%;
+}
+
+.input2 {
   background: #EEE8D5;
-  width: 97%;
-  min-width: 290px;
+  width: 100%;
   margin: 0 auto;
   text-align: left;
-  padding-left: 11px
+  padding-left: 3%;
 }
 .field{
 	text-align: left;
+	padding-top: 5%;
 }
 .link{
 	float:right;
 }
-body{
+.disclaimer{
+	background-color:#ddd;
 	border: 1px solid;
-	margin: 10% 33% auto !important;
+	border-color:#ddd;
+}
+
+body{
+	    width: 100%;
 	display: inline-block;
-	margin: 0px auto;
 }
 
 
 h1{
   font-weight: normal;
   color: #475b62;
-  font-size: 2.2rem;
+  font-size: 3.2rem;
   line-height: 100%;
   margin-bottom: 10px;
   text-align: center;
 } 
 
 input {
-  height: 21px;
   margin: 0 8px;
-  width: 146px;
+  width: 55%;
   border-radius: 6px;
 }
 
 select {
-  padding: 4px  0 10px 15px;
-  font-size: 1rem;
-  color: #475B62;
-  border-radius: 10px;
-  width: 80px;
-  margin: 0 40px;
+    color: #475B62;
+    width: 25%;
+    padding: 0%;
+    font-size: medium;
+    margin-left: 5%;
 }
 
-
+@media only screen and (max-width: 768px) {
+   
+	.converterclass{
+		width: 80%;
+		border: 1px solid;
+		margin-left: 5%;
+		margin-right:5%;
+		margin-top: 5%;
+	}
+}
 

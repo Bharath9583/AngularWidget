@@ -12,22 +12,15 @@ converter.controller('ConverterCntlr', ['$scope', '$http', function($scope, $htt
 	$scope.toConvert = function() {            
 			if($scope.fromCurType === $scope.toCurType){
 				$scope.toCurVal = $scope.fromCurVal;
+				$scope.toval = 1;
 			}else{
 				$scope.toCurVal = $scope.fromCurVal * ($scope.rates[$scope.toCurType] * (1 / $scope.rates[$scope.fromCurType]));
 				$scope.toCurVal = Math.round($scope.toCurVal * 100) / 100;
+				$scope.toval = Math.round($scope.rates[$scope.toCurType] * 100)/100;
 			}
 	};
 
  }]);
-
-converter.controller('MyController', function ($scope, $window) {
-   $scope.OpenPopupWindow = function () {
-       $window.open("./js/default.html", "popup", "width=300,height=200,left=450,top=150");
-       $popup.fromType = $scope.fromCurType;
-       $popup.toVal = $scope.toCurVal;
-       $popup.toType = $scope.toType;
-   }
-});
 
 converter.directive('validNumber', function() {
   return {
@@ -42,17 +35,8 @@ converter.directive('validNumber', function() {
             var val = '';
         }
         
-        var clean = val.replace(/[^-0-9\.]/g, '');
-        var negativeCheck = clean.split('-');
+        var clean = val.replace(/[^0-9\.]/g, '');
 		var decimalCheck = clean.split('.');
-        if(!angular.isUndefined(negativeCheck[1])) {
-            negativeCheck[1] = negativeCheck[1].slice(0, negativeCheck[1].length);
-            clean =negativeCheck[0] + '-' + negativeCheck[1];
-            if(negativeCheck[0].length > 0) {
-            	clean =negativeCheck[0];
-            }
-            
-        }
           
         if(!angular.isUndefined(decimalCheck[1])) {
             decimalCheck[1] = decimalCheck[1].slice(0,2);
@@ -74,28 +58,3 @@ converter.directive('validNumber', function() {
     }
   };
 });
-
-converter.directive('myDirective', ['$window', function ($window) {
-
-     return {
-        link: link,
-        restrict: 'E',
-        template: '<div>window size: {{width}}px</div>'
-     };
-
-     function link(scope, element, attrs){
-
-       scope.width = $window.innerWidth;
-
-       angular.element($window).bind('resize', function(){
-
-         scope.width = $window.innerWidth;
-
-         // manuall $digest required as resize event
-         // is outside of angular
-         scope.$digest();
-       });
-
-     }
-
- }]);

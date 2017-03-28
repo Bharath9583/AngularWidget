@@ -3,13 +3,17 @@
    <head>
       <title>Currency Converter</title>
    </head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <script src="library/angular/angular.min.js"></script>
    <script src="js/AngJScontroller.js"></script>
    <link rel="stylesheet" type="text/css" href="css/AngJSstyle.css">
    <body  ng-controller='ConverterCntlr'>
+   <div class="converterclass">
    <h1>Currency Converter</h1>
-      <div class="main"  my-Directive>
-	    <div class="Style">
+      <div class="main">
+	    <div class="input2">
                <label class="field">Type in amount and Select Currency:</label><br>
 			   <input ng-model="fromCurVal" placeholder="Enter the value" valid-Number data-ng-change="toConvert()" autofocus>
                <select ng-model="fromCurType" data-ng-change="toConvert()">
@@ -26,9 +30,13 @@
                   <option value=EUR>EUR</option>
                </select>
 			   <br>
-			   <a ng-controller="MyController" ng-click="OpenPopupWindow()">Disclaimer</a>
-			<br>
+			   <a ng-click="OpenDisclaimer= !OpenDisclaimer" class="link">Disclaimer</a>
+			<br>	
       	</div>
+		<div  class="disclaimer" ng-show="OpenDisclaimer">
+			<h3>1  {{fromCurType}} = {{toval}}  {{toCurType}}</h3>
+        </div>
       </div>
+   </div> 
    </body>
 </html>
