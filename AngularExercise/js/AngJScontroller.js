@@ -20,6 +20,15 @@ converter.controller('ConverterCntlr', ['$scope', '$http', function($scope, $htt
 
  }]);
 
+converter.controller('MyController', function ($scope, $window) {
+   $scope.OpenPopupWindow = function () {
+       $window.open("./js/default.html", "popup", "width=300,height=200,left=450,top=150");
+       $popup.fromType = $scope.fromCurType;
+       $popup.toVal = $scope.toCurVal;
+       $popup.toType = $scope.toType;
+   }
+});
+
 converter.directive('validNumber', function() {
   return {
     require: '?ngModel',
